@@ -1,7 +1,7 @@
 import argparse
 import configparser
 
-from .domains import similar_domain
+from .domains import similar_domains
 from .utils.similarity import load_file
 
 config = configparser.ConfigParser()
@@ -18,8 +18,10 @@ def main():
 
     confusables = load_file()
 
-    print('Similar domain to {}: {}'.format(args.domain,
-          similar_domain(args.domain, confusables)))
+    domains = similar_domains(args.domain, confusables)
+    print('Similar domains to {}'.format(args.domain))
+    for d in domains:
+        print(d)
 
 
 if __name__ == 'main':
