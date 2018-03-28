@@ -15,8 +15,7 @@ setup(
     python_requires='>3.5.0',
     install_requires=[
         'tqdm',
-        'colorama',
-        'idna'
+        'colorama'
     ],
     extras_require={
         'dev': [
