@@ -18,6 +18,8 @@ def main():
     parser.add_argument('domain', action='store',
                         help='check similar domains to this one')
     parser.add_argument('-v', '--verbose', action='store_true')
+    parser.add_argument('-w', '--whois', action='store_true',
+                        help='check whois')
     parser.add_argument('-m', '--max', action='store',
                         default=10000, type=int,
                         help='maximum number of similar domains')
@@ -32,7 +34,7 @@ def main():
         for d in domains:
             print(d)
         print('Checking if domains are up')
-        check_domains(domains, t=5, verbose=args.verbose)
+        check_domains(domains, t=5, verbose=args.verbose, whois=args.whois)
 
 
 if __name__ == 'main':

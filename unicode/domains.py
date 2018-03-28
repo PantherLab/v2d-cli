@@ -3,6 +3,7 @@ import random
 from itertools import islice, product
 import requests
 import time
+import whois
 
 latin_characters = [format(i + 32, '05x') for i in range(96)]
 
@@ -40,17 +41,27 @@ def similar_domains(domain, confusables, max_domains=100000,):
         return []
 
 
-def check_domain(domain, t=5, verbose=False):
+def check_domain(domain, t=5, verbose=False, whois=False):
     try:
         requests.get('http://{}'.format(domain))
         if verbose:
             print('The domain {} exists'.format(domain))
+        if whois:
+            w = who_is(domain)
+            if(w is not None):
+                print(w)
     except Exception:
         if verbose:
             print('The domain {} does not exist'.format(domain))
     time.sleep(t)
 
 
-def check_domains(domains, t=5, verbose=False):
+def check_domains(domains, t=5, verbose=False, whois=False):
     for domain in domains:
-        check_domain(domain, t, verbose)
+        check_domain(domain, t, verbose, whois)
+
+def who_is(domain):
+    try:
+        return whois.whois(domain)
+    except whois.parser.PywhoisError:
+        print('Whois not found!')
