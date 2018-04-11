@@ -21,15 +21,15 @@ def similar_domain(domain, confusables):
 
     return new_domain
 
+def get_confusables(x, confusables, latin_characters): return confusables['characters'][to_hex(x)] if to_hex(x) in latin_characters else [to_hex(x)]
+
 def similar_domains(domain, confusables, max_domains=100000,):
     try:
         d = domain.split('.')
         domain = d[0]
         tld = d[1]
 
-        characters_lists = [list(map(to_unicode,
-                                     confusables['characters'][to_hex(x)]
-                                     )) for x in domain]
+        characters_lists = [list(map(to_unicode, get_confusables(x, confusables, latin_characters))) for x in domain]
 
         cartesian_product = product(*characters_lists)
 

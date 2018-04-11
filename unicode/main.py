@@ -39,13 +39,17 @@ def main():
     parser.add_argument('-m', '--max', action='store',
                         default=10000, type=int,
                         help='maximum number of similar domains')
-    parser.add_argument('-o', dest='output',action='store_false', help='Output file', default='domains.txt')
+    parser.add_argument('-t', '--threshold', action='store',
+                        default=75, type=int,
+                        help='Similarity threshold')
+    parser.add_argument('-o', '--output',dest='output', help='Output file')
 
     args = parser.parse_args()
 
-    confusables = load_file()
+    confusables = load_file(args.threshold)
 
-    domains = similar_domains(args.domain, confusables, args.max)
+    domains = set(similar_domains(args.domain, confusables, args.max))
+    write = False
     if len(domains) > 0:
         print('Similar domains to {}'.format(args.domain))
         if (args.output):
@@ -61,6 +65,7 @@ def main():
 
         if write:
             f.close()
+        print('Total similar domains to {}: {}'.format(args.domain, len(domains)))
 
 if __name__ == 'main':
     main()
