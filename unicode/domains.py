@@ -1,4 +1,4 @@
-from .utils.unicode import to_hex, to_unicode
+from .utils.unicode import to_hex, to_unicode, to_decimal
 import random
 from itertools import islice, product
 import requests
@@ -21,12 +21,12 @@ def similar_domain(domain, confusables):
 
     return new_domain
 
-
 def similar_domains(domain, confusables, max_domains=100000,):
     try:
         d = domain.split('.')
         domain = d[0]
         tld = d[1]
+
         characters_lists = [list(map(to_unicode,
                                      confusables['characters'][to_hex(x)]
                                      )) for x in domain]

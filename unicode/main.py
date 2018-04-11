@@ -10,32 +10,57 @@ config.read('config')
 
 DESCRIPTION = config['APPLICATION_INFO']['DESCRIPTION']
 
+def banner():
+    print("""
+
+.########..##.....##..######...######..
+.##.....##.##.....##.##....##.##....##.
+.##.....##.##.....##.##.......##.......
+.##.....##.##.....##.##.......##...####
+.##.....##.##.....##.##.......##....##.
+.##.....##.##.....##.##....##.##....##.
+.########...#######...######...######..
+
+Domain Unicode Confusables Generator
+""")
 
 def main():
+    banner()
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('domain', action='store',
                         help='check similar domains to this one')
     parser.add_argument('-v', '--verbose', action='store_true')
+    parser.add_argument('-c', '--check', action='store_true',
+                        help='check if this domain is alive')
     parser.add_argument('-w', '--whois', action='store_true',
                         help='check whois')
     parser.add_argument('-m', '--max', action='store',
                         default=10000, type=int,
                         help='maximum number of similar domains')
+    parser.add_argument('-o', dest='output',action='store_false', help='Output file', default='domains.txt')
 
     args = parser.parse_args()
 
     confusables = load_file()
-    print(args.max)
+
     domains = similar_domains(args.domain, confusables, args.max)
     if len(domains) > 0:
         print('Similar domains to {}'.format(args.domain))
+        if (args.output):
+            f = open(args.output, 'w')
+            write = True
         for d in domains:
             print(d)
-        print('Checking if domains are up')
-        check_domains(domains, t=5, verbose=args.verbose, whois=args.whois)
+            if write:
+                f.write(d + "\n")
+        if (args.check):
+            print('Checking if domains are up')
+            check_domains(domains, t=5, verbose=args.verbose, whois=args.whois)
 
+        if write:
+            f.close()
 
 if __name__ == 'main':
     main()

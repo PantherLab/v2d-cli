@@ -1,7 +1,7 @@
 [APPLICATION_INFO]
 NAME=unicode
 VERSION=0.0.1
-DESCRIPTION=TODO
-AUTHOR=
-AUTHOR_EMAIL=
-URL=
+DESCRIPTION=DUCG: Deep Unicode Confusable Generation - System based on the similarity of the characters unicode by means of Deep Learning. This provides a greater number of variations and a possible update over time.
+AUTHOR=José Ignacion Escribano & Miguel Hernández & Alfonso Muñoz
+AUTHOR_EMAIL=jiep
+URL=https://github.com/jiep/unicode
