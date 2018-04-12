@@ -34,8 +34,10 @@ TODO
 
 ## Authors
 
-TODO
+* José Ignacio Escribano Pablos
+* Miguel Hernández Boza - @MiguelHzBz
+* Alfonso Muñoz Muñoz - @mindcrypt
 
 ## License
 
-TODO
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
