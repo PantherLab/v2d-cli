@@ -34,9 +34,9 @@ TODO
 
 ## Authors
 
-José Ignacio Escribano Pablos
-Miguel Hernández Boza - @MiguelHzBz
-Alfonso Muñoz Muñoz - @mindcrypt
+* José Ignacio Escribano Pablos
+* Miguel Hernández Boza - @MiguelHzBz
+* Alfonso Muñoz Muñoz - @mindcrypt
 
 ## License
 
