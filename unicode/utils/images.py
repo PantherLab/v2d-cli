@@ -11,7 +11,7 @@ def download_confusables(version='1.0.0', filename='confusables-75.pickle'):
         create_home_directory()
     if not exists_file_home(filename):
         url = ('https://github.com/jiep/unicode-similarity/'
-               'releases/download/{}/{}').format(version,filename)
+               'releases/download/{}/{}').format(version, filename)
         response = requests.get(url, stream=True)
         size = int(response.headers.get('content-length', 0))
         block_size = 1024
@@ -28,6 +28,7 @@ def download_confusables(version='1.0.0', filename='confusables-75.pickle'):
                 print('It was an error!')
 
     return str(join(filename))
+
 
 def unzip(filename, output):
     if(exists_file_home(filename) and not exists_dir_home(output)):

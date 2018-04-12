@@ -4,6 +4,3 @@ def to_unicode(hex):
 
 def to_hex(unicode):
     return format(ord(unicode), "05x")
-
-def to_decimal(s):
-    return ord(s)

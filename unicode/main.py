@@ -10,6 +10,7 @@ config.read('config')
 
 DESCRIPTION = config['APPLICATION_INFO']['DESCRIPTION']
 
+
 def banner():
     print("""
 
@@ -23,6 +24,7 @@ def banner():
 
 Domain Unicode Confusables Generator
 """)
+
 
 def main():
     banner()
@@ -40,9 +42,9 @@ def main():
                         default=10000, type=int,
                         help='maximum number of similar domains')
     parser.add_argument('-t', '--threshold', action='store',
-                        default=75, type=int, choices=[75,80,85,90,95,99], metavar="75,80,85,90,95,99",
+                        default=75, type=int, choices=[75, 80, 85, 90, 95, 99], metavar="75,80,85,90,95,99",
                         help='Similarity threshold')
-    parser.add_argument('-o', '--output',dest='output', help='Output file')
+    parser.add_argument('-o', '--output', dest='output', help='Output file')
 
     args = parser.parse_args()
 
@@ -66,6 +68,7 @@ def main():
         if write:
             f.close()
         print('Total similar domains to {}: {}'.format(args.domain, len(domains)))
+
 
 if __name__ == 'main':
     main()
