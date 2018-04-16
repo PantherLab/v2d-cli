@@ -2,8 +2,8 @@ import requests
 from tqdm import tqdm
 import math
 import zipfile
-from .files import create_home_directory, dir_exists, home_directory
-from .files import exists_file_home, join, exists_dir_home
+from files import create_home_directory, dir_exists, home_directory
+from files import exists_file_home, join, exists_dir_home
 
 
 def download_confusables(version='1.0.0', filename='confusables-75.pickle'):

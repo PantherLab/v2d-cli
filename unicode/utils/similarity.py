@@ -1,6 +1,6 @@
 import pickle
-from .files import exists_file_home
-from .images import download_confusables, join
+from files import exists_file_home
+from images import download_confusables, join
 
 
 def load_file(threshold=75):

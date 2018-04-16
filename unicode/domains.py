@@ -1,4 +1,4 @@
-from .utils.unicode import to_hex, to_unicode
+from utils.unicode import to_hex, to_unicode
 import random
 from itertools import islice, product
 import requests

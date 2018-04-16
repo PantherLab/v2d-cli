@@ -2,8 +2,8 @@ import argparse
 import configparser
 import signal
 
-from .domains import similar_domains, check_domains
-from .utils.similarity import load_file
+from domains import similar_domains, check_domains
+from utils.similarity import load_file
 
 config = configparser.ConfigParser()
 config.read('config')
