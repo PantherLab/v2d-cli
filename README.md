@@ -116,6 +116,9 @@ The domain examp|e.org does not exist
 The domain examplɘ.org does not exist
 Total similar domains to example.org: 10
 ```
+##### Note
+
+> Sometimes the output isn't render, that is because the terminal needs the font, but if you copy the text is correct.
 
 #### Getting help
 

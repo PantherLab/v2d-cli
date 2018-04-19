@@ -11,7 +11,8 @@ setup(
     install_requires=[
         'tqdm',
         'colorama',
-        'python-whois'
+        'python-whois',
+        'requests'
     ],
     extras_require={
         'dev': [
