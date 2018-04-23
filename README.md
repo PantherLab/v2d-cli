@@ -27,13 +27,13 @@ This is the first public database with the images of the Unicode characters, we'
 
 ![Image repository](/img/repository.png "Image repository.")
 
-Repo: https://github.com/jiep/unicode-image-database
+Repo: https://github.com/PantherLab/v2d-unicodeDB
 
 The images are available for all the community to improve the algorithms to recognize characters.
 
 To calculate the similarity between images of Unicode characters, we use Transfer Learning with [Keras](https://keras.io), all this project are available in Github:
 
-Repo: https://github.com/jiep/unicode-similarity
+Repo: https://github.com/PantherLab/v2d-similarity
 
 This code extracts image features to compare and create a `confusables` file that it's used by the `CLI`.
 
@@ -41,7 +41,7 @@ Finally, we use the result of this repository to create a `CLI` to generate all 
 
 The code is available in Github
 
-Repo: https://github.com/jiep/unicode
+Repo: https://github.com/PantherLab/v2d-cli
 
 ## V2D - CLI
 
@@ -57,8 +57,8 @@ Python>=3.5
 ### Installing
 
 ```
-git clone https://github.com/jiep/unicode
-cd v2d
+git clone https://github.com/PantherLab/v2d-cli
+cd v2d-cli
 pip3 install -e .
 ```
 
@@ -179,7 +179,7 @@ Examples:
 
 Any collaboration is welcome!
 
-There're many tasks to do.You can check the [Issues](https://github.com/jiep/unicode/issues) and send us a Pull Request.
+There're many tasks to do.You can check the [Issues](https://github.com/PantherLab/v2d-cli/issues) and send us a Pull Request.
 
 ## License
 
