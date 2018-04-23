@@ -15,11 +15,7 @@ Some interesting projects are:
 
 ## Research
 
-We based our tool in the last article because we think it is important to understand the problems of this type of symbols, but we use other point of view and we don't take the standard to the similar symbols because this is too old and controllated by the systems, with this variations we have a personal system to create multiple variations without restriction and we can update any of the parts of the system to get better results.
-
-This is the schema of the system:
-
-![Alt text](/img/Architecture.png "Repositories system.")
+This tool is the result of the work of the Cybersecurity Lab I4S team within BlueIndico, where we start from the simple idea of comparing images of unicode characters. Initially, we needed the images of all these Unicode characters and this is the first problem, we could not find it on the internet. We create the first database with the unicode image characters.
 
 The first repository is that of the Unicode images, we have 38,880 characters that we will use to search from their images which are more similar to those that interest us (Basic Latin).
 
@@ -42,6 +38,10 @@ Finally, we use the result of this repository to create a `CLI` to generate all 
 The code is available in Github
 
 Repo: https://github.com/PantherLab/v2d-cli
+
+This is the schema of the system:
+
+![Alt text](/img/Architecture.png "Repositories system.")
 
 ## V2D - CLI
 
