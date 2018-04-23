@@ -1,22 +1,21 @@
 from setuptools import setup
-import configparser
-
-config = configparser.ConfigParser()
-config.read('config')
 
 setup(
-    name=config['APPLICATION_INFO']['NAME'],
-    version=config['APPLICATION_INFO']['VERSION'],
-    packages=[config['APPLICATION_INFO']['NAME']],
-    description=config['APPLICATION_INFO']['DESCRIPTION'],
-    author=config['APPLICATION_INFO']['AUTHOR'],
-    author_email=config['APPLICATION_INFO']['AUTHOR_EMAIL'],
-    url=config['APPLICATION_INFO']['URL'],
+    name="v2d-cli",
+    version="0.0.2",
+    description=('V2D: Visual Unicode attacks with Deep Learning - '
+                 'System based on the similarity of the characters unicode by '
+                 'means of Deep Learning. This provides a greater number of '
+                 'variations and a possible update over time'),
+    author="José Ignacion Escribano & Miguel Hernández & Alfonso Muñoz",
+    author_email="douncoge@gmail.com",
+    url="https://github.com/jiep/unicode",
     python_requires='>3.5.0',
     install_requires=[
         'tqdm',
         'colorama',
-        'python-whois'
+        'python-whois',
+        'requests'
     ],
     extras_require={
         'dev': [
@@ -25,6 +24,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'unicode = unicode.main:main'
+            'v2d = v2d.main:main'
         ]
     })

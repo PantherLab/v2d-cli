@@ -18,8 +18,13 @@ def similar_domain(domain, confusables):
             confusables_characters = confusables['characters'][character_hex]
             choice = random.choice(confusables_characters)
             new_domain = new_domain + to_unicode(choice)
-
     return new_domain
+
+
+def get_confusables(x, confusables, latin_characters):
+    return confusables['characters'][
+                        to_hex(x)] if to_hex(x) in latin_characters else [
+                                                                to_hex(x)]
 
 
 def similar_domains(domain, confusables, max_domains=100000,):
@@ -27,9 +32,12 @@ def similar_domains(domain, confusables, max_domains=100000,):
         d = domain.split('.')
         domain = d[0]
         tld = d[1]
+
         characters_lists = [list(map(to_unicode,
-                                     confusables['characters'][to_hex(x)]
-                                     )) for x in domain]
+                                     get_confusables(x,
+                                                     confusables,
+                                                     latin_characters)))
+                            for x in domain]
 
         cartesian_product = product(*characters_lists)
 
@@ -43,7 +51,7 @@ def similar_domains(domain, confusables, max_domains=100000,):
 
 def check_domain(domain, t=5, verbose=False, whois=False):
     try:
-        requests.get('http://{}'.format(domain))
+        requests.get('https://{}'.format(domain))
         if verbose:
             print('The domain {} exists'.format(domain))
         if whois:
@@ -59,6 +67,7 @@ def check_domain(domain, t=5, verbose=False, whois=False):
 def check_domains(domains, t=5, verbose=False, whois=False):
     for domain in domains:
         check_domain(domain, t, verbose, whois)
+
 
 def who_is(domain):
     try:
