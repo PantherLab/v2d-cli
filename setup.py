@@ -3,7 +3,10 @@ from setuptools import setup
 setup(
     name="v2d-cli",
     version="0.0.2",
-    description="DUCG: Deep Unicode Confusable Generation - System based on the similarity of the characters unicode by means of Deep Learning. This provides a greater number of variations and a possible update over time",
+    description=('V2D: Visual Unicode attacks with Deep Learning - '
+                 'System based on the similarity of the characters unicode by '
+                 'means of Deep Learning. This provides a greater number of '
+                 'variations and a possible update over time'),
     author="José Ignacion Escribano & Miguel Hernández & Alfonso Muñoz",
     author_email="douncoge@gmail.com",
     url="https://github.com/jiep/unicode",

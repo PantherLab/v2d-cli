@@ -5,7 +5,10 @@ import signal
 from .domains import similar_domains, check_domains
 from .utils.similarity import load_file
 
-DESCRIPTION = "v2d-cli: Visual Unicode attacks with deep learning - System based on the similarity of the characters unicode by means of Deep Learning. This provides a greater number of variations and a possible update over time"
+DESCRIPTION = ('v2d-cli: Visual Unicode attacks with Deep Learning - '
+               'System based on the similarity of the characters unicode by '
+               'means of Deep Learning. This provides a greater number of '
+               'variations and a possible update over time')
 
 
 def banner():
@@ -46,16 +49,20 @@ def main():
                         default=10000, type=int,
                         help='maximum number of similar domains')
     parser.add_argument('-t', '--threshold', action='store',
-                        default=75, type=int, choices=[75, 80, 85, 90, 95, 99], metavar="75,80,85,90,95,99",
+                        default=75,
+                        type=int,
+                        choices=[75, 80, 85, 90, 95, 99],
+                        metavar="75,80,85,90,95,99",
                         help='Similarity threshold')
     parser.add_argument('-o', '--output', dest='output', help='Output file')
-    parser.add_argument('-i', '--input', dest='fileinput', help='List of targets. One input per line.')
+    parser.add_argument('-i', '--input', dest='fileinput',
+                        help='List of targets. One input per line.')
 
     args = parser.parse_args()
 
     if (not args.domain and not args.fileinput):
-        print ("Need one type of input, -i --input or -d --domain")
-        print (parser.print_help())
+        print("Need one type of input, -i --input or -d --domain")
+        print(parser.print_help())
         sys.exit(-1)
 
     confusables = load_file(args.threshold)
@@ -67,11 +74,11 @@ def main():
             f = open(args.fileinput, 'r')
             for line in f:
                 idomains.append(line.strip())
-        except Exception as e:
-            print ("--------------")
-            print ("Wrong input file.\n\n")
-            print ("--------------")
-            print (parser.print_help())
+        except Exception:
+            print("--------------")
+            print("Wrong input file.\n\n")
+            print("--------------")
+            print(parser.print_help())
             sys.exit(-1)
     else:
         idomains.append(args.domain)
@@ -89,11 +96,12 @@ def main():
                     f.write(d + "\n")
             if (args.check):
                 print('Checking if domains are up')
-                check_domains(domains, t=5, verbose=args.verbose, whois=args.whois)
+                check_domains(domains, t=5,
+                              verbose=args.verbose,
+                              whois=args.whois)
             print('Total similar domains to {}: {}'.format(dom, len(domains)))
     if write:
         f.close()
-
 
 
 if __name__ == 'main':
