@@ -58,7 +58,7 @@ local_settings.py
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy stuff:pypirc
 .scrapy
 
 # Sphinx documentation
@@ -72,6 +72,10 @@ target/
 
 # pyenv
 .python-version
+
+# config
+.pypirc
+
 
 # celery beat schedule file
 celerybeat-schedule
