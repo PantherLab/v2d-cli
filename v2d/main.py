@@ -24,7 +24,7 @@ oooooo     oooo   .oooo.   oooooooooo.
 
 
     Visual Unicode attacks with Deep Learning
-    Version 0.0.1
+    Version 1.0.0
     Authors: José Ignacio Escribano
     Miguel Hernández (MiguelHzBz)
     Alfonso Muñoz (@mindcrypt)
