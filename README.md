@@ -57,9 +57,7 @@ Python>=3.5
 ### Installing
 
 ```
-git clone https://github.com/PantherLab/v2d-cli
-cd v2d-cli
-pip3 install -e .
+pip3 install v2d
 ```
 
 ### Getting started
