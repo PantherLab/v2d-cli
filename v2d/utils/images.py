@@ -10,7 +10,7 @@ def download_confusables(version='1.0.0', filename='confusables-75.pickle'):
     if not dir_exists(home_directory()):
         create_home_directory()
     if not exists_file_home(filename):
-        url = ('https://github.com/jiep/unicode-similarity/'
+        url = ('https://github.com/PantherLab/v2d-similarity/'
                'releases/download/{}/{}').format(version, filename)
         response = requests.get(url, stream=True)
         size = int(response.headers.get('content-length', 0))
