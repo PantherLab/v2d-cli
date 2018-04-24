@@ -4,6 +4,7 @@ import signal
 
 from .domains import similar_domains, check_domains
 from .utils.similarity import load_file
+from .utils.printing import print_diff
 
 DESCRIPTION = ('v2d-cli: Visual Unicode attacks with Deep Learning - '
                'System based on the similarity of the characters unicode by '
@@ -91,7 +92,7 @@ def main():
             print('Similar domains to {}'.format(dom))
             domains.difference_update(set(dom))
             for d in domains:
-                print(d)
+                print_diff(d, args.domain)
                 if write:
                     f.write(d + "\n")
             if (args.check):
