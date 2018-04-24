@@ -22,7 +22,8 @@ setup(
         'tqdm',
         'colorama',
         'python-whois',
-        'requests'
+        'requests',
+        'virustotal-api'
     ],
     extras_require={
         'dev': [
