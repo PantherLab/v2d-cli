@@ -1,41 +1,26 @@
 # V2D - Visual Unicode attacks with deep learning
 
-Unlike the classic tools for generating malicious domains (typographical errors), we have created a system to detect similar domains from Unicode. This system does not have a static table in the code with the changes but they are based on the similarity of the characters by means of Deep Learning. This provides a greater number of variations and a possible update over time.
+Unlike the classic tools for generating malicious domains (typographical errors), we have created a system to detect similar domains from Unicode. This system does not have a static table with the possible changes, the domains creation are based on the similarity of the characters by means of Deep Learning. Consequently, this provides a greater number of variations and possible updates over time if new characters are created.
 
 ## State of Art
 
-This project is based on the initial idea of capturing the differences between Unicode characters through their representation in images, for which the following system of repositories has been created. This is a hard difference with others projects who use the standard of Unicode. We based on this to update our tool and try to get a better result.
-
-Some interesting projects are:
+This project is based on the initial idea of capturing the differences between Unicode characters through their representation in images. In actual fact, there are some projects which use the standard of Unicode and some repositories have been created. Some interesting projects are:
 
 * Standard: https://unicode.org/cldr/utility/confusables.jsp
 
 * Personal project: http://www.irongeek.com/i.php?page=security/out-of-character-use-of-punycode-and-homoglyph-attacks-to-obfuscate-urls-for-phishing
 
+We based on these repositories to update our tool and try to get more accurate and complete results.
+
 
 ## Research
 
-This tool is the result of the work of the Cybersecurity Lab I4S team within BlueIndico, where we start from the simple idea of comparing images of unicode characters. Initially, we needed the images of all these Unicode characters and this is the first problem, we could not find it on the internet. We create the first database with the unicode image characters.
-
-The first repository is that of the Unicode images, we have 38,880 characters that we will use to search from their images which are more similar to those that interest us (Basic Latin).
-
-This is the first public database with the images of the Unicode characters, we'll like to shared it to improve the recognize images database for the community. Any can download all the images in the following repository:
+This tool is the result of the work of the Cybersecurity Lab I4S team within BlueIndico, where we started from the simple idea of comparing images of unicode characters. Initially, the images of all these Unicode characters were needed and this was the first problem as we could not find them on the Internet. So that, we created the first database with the unicode image characters. It can be found on the repository of Unicode images, https://github.com/PantherLab/v2d-unicodeDB. There are 38,880 characters that we will use to compare with Basic Latins characters and select the most similar ones. This is the first public database with the images of the Unicode characters, we would like to share it with the community in order to improve the image recognition. Anyone can download the images from the repository. Any contribution to  improve the algorithms for characters recognition would be appreciated.
 
 ![Image repository](/img/repository.png "Image repository.")
 
-Repo: https://github.com/PantherLab/v2d-unicodeDB
-
-The images are available for all the community to improve the algorithms to recognize characters.
-
-To calculate the similarity between images of Unicode characters, we use Transfer Learning with [Keras](https://keras.io), all this project are available in Github:
-
-Repo: https://github.com/PantherLab/v2d-similarity
-
-This code extracts image features to compare and create a `confusables` file that it's used by the `CLI`.
-
-Finally, we use the result of this repository to create a `CLI` to generate all the possible combinations with each similar letter of each letter in Unicode. As an attacker, it can be used to generate malicious web domains, emails, phishing, etc. On the other hand, as a defender, you can check if all these variations are working to block and inform.
-
-The code is available in Github
+After having all the characters, the next step is to calculate the similarity between images of Unicode characters. To accomplish that, we used Transfer Learning with Keras. The full project is available on Github, https://github.com/PantherLab/v2d-similarity. This code extracts image features to compare and create a confusables file that it will be used by the CLI.
+Finally, we created a CLI using the result of the previous step. This CLI generates all the possible combinations with each similar letter of each letter in Unicode. On the one hand, as an attacker, it can be used to generate malicious web domains, emails, phishing, etc. On the other hand, as a defender, to check how all these variations affect/impact in a web and if they exist, block them or report them as fraud to State forces.
 
 Repo: https://github.com/PantherLab/v2d-cli
 
@@ -45,7 +30,7 @@ This is the schema of the system:
 
 ## V2D - CLI
 
-V2D is the first tool that used Deep Learning, in special Transfer Learning, to create automatically new variations of inputs used Unicode characters, its a typical visual attack but in this case this tool use the power of the machines to select the most similar character between all possibles.
+V2D is the first tool that uses Deep Learning, especially Transfer Learning, to automatically create new variations of inputs using Unicode characters. It is a typical visual attack but in this case the tool uses the power of the machines to select the most similar characters between all possibles.
 
 [![demo](https://asciinema.org/a/oxZKyNJAoblosmwtzWr8Pgchg.png)](https://asciinema.org/a/oxZKyNJAoblosmwtzWr8Pgchg?autoplay=1)
 
