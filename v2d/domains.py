@@ -4,6 +4,8 @@ from itertools import islice, product
 import requests
 import time
 import whois
+from virus_total_apis import PublicApi as VirusTotalPublicApi
+import json
 
 latin_characters = [format(i + 32, '05x') for i in range(96)]
 
@@ -49,7 +51,7 @@ def similar_domains(domain, confusables, max_domains=100000,):
         return []
 
 
-def check_domain(domain, t=5, verbose=False, whois=False):
+def check_domain(domain, API_KEY, t=5, verbose=False, whois=False, vt=False):
     try:
         requests.get('https://{}'.format(domain))
         if verbose:
@@ -58,15 +60,19 @@ def check_domain(domain, t=5, verbose=False, whois=False):
             w = who_is(domain)
             if(w is not None):
                 print(w)
+        if vt:
+            vt = VirusTotalPublicApi(API_KEY)
+            response = vt.get_url_report('https://{}'.format(domain), scan='1')
+            print(json.dumps(response, sort_keys=False, indent=4))
     except Exception:
         if verbose:
             print('The domain {} does not exist'.format(domain))
     time.sleep(t)
 
 
-def check_domains(domains, t=5, verbose=False, whois=False):
+def check_domains(domains, API_KEY, t=5, verbose=False, whois=False, vt=False):
     for domain in domains:
-        check_domain(domain, t, verbose, whois)
+        check_domain(domain, API_KEY, t, verbose, whois, vt)
 
 
 def who_is(domain):

@@ -63,7 +63,7 @@ oooooo     oooo   .oooo.   oooooooooo.
 
 
     Visual Unicode attacks with Deep Learning
-    Version 1.0.0
+    Version 1.1.0
     Authors: José Ignacio Escribano
     Miguel Hernández (MiguelHzBz)
     Alfonso Muñoz (@mindcrypt)
@@ -113,17 +113,17 @@ oooooo     oooo   .oooo.   oooooooooo.
 
 
     Visual Unicode attacks with Deep Learning
-    Version 1.0.0
+    Version 1.1.0
     Authors: José Ignacio Escribano
     Miguel Hernández (MiguelHzBz)
     Alfonso Muñoz (@mindcrypt)
 
 
 
-usage: v2d [-h] [-d DOMAIN] [-v] [-c] [-w] [-m MAX] [-t 75,80,85,90,95,99]
-           [-o OUTPUT] [-i FILEINPUT]
+usage: v2d [-h] [-d DOMAIN] [-v] [-c] [-w] [-vt] [-m MAX]
+           [-t 75,80,85,90,95,99] [-key API] [-o OUTPUT] [-i FILEINPUT]
 
-v2d-cli: Visual Unicode attacks with deep learning - System based on the
+v2d-cli: Visual Unicode attacks with Deep Learning - System based on the
 similarity of the characters unicode by means of Deep Learning. This provides
 a greater number of variations and a possible update over time
 
@@ -134,9 +134,12 @@ optional arguments:
   -v, --verbose
   -c, --check           check if this domain is alive
   -w, --whois           check whois
+  -vt, --virustotal     check Virus Total
   -m MAX, --max MAX     maximum number of similar domains
   -t 75,80,85,90,95,99, --threshold 75,80,85,90,95,99
                         Similarity threshold
+  -key API, --api-key API
+                        VirusTotal API Key
   -o OUTPUT, --output OUTPUT
                         Output file
   -i FILEINPUT, --input FILEINPUT
