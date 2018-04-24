@@ -92,7 +92,7 @@ def main():
             print('Similar domains to {}'.format(dom))
             domains.difference_update(set(dom))
             for d in domains:
-                print_diff(args.domain, d)
+                print_diff(dom, d)
                 if write:
                     f.write(d + "\n")
             if (args.check):
