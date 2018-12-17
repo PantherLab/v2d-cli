@@ -12,13 +12,15 @@ def print_red(text):
 def print_diff(domain, unicode_domain):
     # if len(domain) != len(unicode_domain) return(-1)
 
+    aux = ''
     difference = ''
     for i, letter in enumerate(unicode_domain):
         if letter != domain[i]:
             difference = difference + Fore.RED + letter
+            aux = aux + letter
         else:
             difference = difference + Fore.GREEN + letter
 
     difference = difference + Style.RESET_ALL
-
-    print(difference)
+    salida = difference + " ------ " + aux
+    print(salida)

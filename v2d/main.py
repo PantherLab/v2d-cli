@@ -129,7 +129,7 @@ def main():
         sys.exit(-1)
 
     if not (args.homoglyph or args.substitution or args.flipper):
-        print("Need one type of attack, -F -Hg or -S")
+        print("Need one type of attack, -F -H or -S")
         print()
         sys.exit(-1)
     idomains = list()
@@ -174,7 +174,8 @@ def main():
                 domains.difference_update(set(dom))
             for d in domains:
                 if not args.substitution:
-                    print_diff(dom, d)
+                    if not (d == dom):
+                        print_diff(dom, d)
                 else:
                     print (d)
                 if write:
