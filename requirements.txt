@@ -1,0 +1,5 @@
+tqdm
+colorama
+python-whois
+requests
+virustotal-api

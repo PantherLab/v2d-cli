@@ -6,7 +6,7 @@ from .domains import similar_domains, check_domains
 from .utils.similarity import load_file
 from .utils.printing import print_diff
 
-DESCRIPTION = ('v2d-cli: Visual Unicode attacks with Deep Learning - '
+DESCRIPTION = ('deep-confusables-cli: Visual Unicode attacks with Deep Learning - '
                'System based on the similarity of the characters unicode by '
                'means of Deep Learning. This provides a greater number of '
                'variations and a possible update over time')
@@ -14,23 +14,16 @@ DESCRIPTION = ('v2d-cli: Visual Unicode attacks with Deep Learning - '
 
 def banner():
     print("""
-
-oooooo     oooo   .oooo.   oooooooooo.
- `888.     .8'  .dP""Y88b  `888'   `Y8b
-  `888.   .8'         ]8P'  888      888
-   `888. .8'        .d8P'   888      888
-    `888.8'       .dP'      888      888
-     `888'      .oP     .o  888     d88'
-      `8'       8888888888 o888bood8P'
-
+ __   ___  ___  __      __   __        ___       __        __        ___  __
+|  \ |__  |__  |__) __ /  ` /  \ |\ | |__  |  | /__`  /\  |__) |    |__  /__`
+|__/ |___ |___ |       \__, \__/ | \| |    \__/ .__/ /~~\ |__) |___ |___ .__/
 
     Visual Unicode attacks with Deep Learning
     Version 1.1.0
-    Authors: José Ignacio Escribano
-    Miguel Hernández (MiguelHzBz)
-    Alfonso Muñoz (@mindcrypt)
-
-
+    Created by:
+      - José Ignacio Escribano Pablos (@jiep)
+      - Miguel Hernández Boza (@Miguel000)
+      - Alfonso Muñoz Muñoz (@mindcrypt)
 """)
 
 
