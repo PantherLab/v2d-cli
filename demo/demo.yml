@@ -1,0 +1,311 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/user
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 150
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 37
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: DeepConfusables
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 191
+    content: "user@host$ \e[0m"
+  - delay: 972
+    content: d
+  - delay: 217
+    content: e
+  - delay: 150
+    content: e
+  - delay: 633
+    content: p
+  - delay: 333
+    content: '-'
+  - delay: 183
+    content: c
+  - delay: 134
+    content: o
+  - delay: 200
+    content: 'n'
+  - delay: 101
+    content: f
+  - delay: 216
+    content: u
+  - delay: 151
+    content: s
+  - delay: 116
+    content: a
+  - delay: 232
+    content: b
+  - delay: 251
+    content: l
+  - delay: 67
+    content: e
+  - delay: 200
+    content: s
+  - delay: 233
+    content: ' '
+  - delay: 367
+    content: '-'
+  - delay: 200
+    content: h
+  - delay: 317
+    content: "\r\n"
+  - delay: 319
+    content: "\r\n __   ___  ___  __      __   __        ___       __        __        ___  __\r\n|  \\ |__  |__  |__) __ /  ` /  \\ |\\ | |__  |  | /__`  /\\  |__) |    |__  /__`\r\n|__/ |___ |___ |       \\__, \\__/ | \\| |    \\__/ .__/ /~~\\ |__) |___ |___ .__/\r\n\r\n    Visual Unicode attacks with Deep Learning\r\n    Version 1.1.0\r\n    Created by:\r\n      - José Ignacio Escribano Pablos (@jiep)\r\n      - Miguel Hernández Boza (@Miguel000)\r\n      - Alfonso Muñoz Muñoz (@mindcrypt)\r\n\r\nusage: deep-confusables [-h] [-d DOMAIN] [-v] [-c] [-w] [-vt] [-m MAX]\r\n                        [-t 75,80,85,90,95,99] [-key API] [-o OUTPUT]\r\n                        [-i FILEINPUT]\r\n\r\ndeep-confusables-cli: Visual Unicode attacks with Deep Learning - System based\r\non the similarity of the characters unicode by means of Deep Learning. This\r\nprovides a greater number of variations and a possible update over time\r\n\r\noptional arguments:\r\n  -h, --help            show this help message and exit\r\n  -d DOMAIN, --domain DOMAIN\r\n                        check similar domains to this one\r\n  -v, --verbose\r\n  -c, --check           check if this domain is alive\r\n  -w, --whois           check whois\r\n  -vt, --virustotal     check Virus Total\r\n  -m MAX, --max MAX     maximum number of similar domains\r\n  -t 75,80,85,90,95,99, --threshold 75,80,85,90,95,99\r\n                        Similarity threshold\r\n  -key API, --api-key API\r\n                        VirusTotal API Key\r\n  -o OUTPUT, --output OUTPUT\r\n                        Output file\r\n  -i FILEINPUT, --input FILEINPUT\r\n                        List of targets. One input per line.\r\n"
+  - delay: 191
+    content: "user@host$ \e[0m"
+  - delay: 3069
+    content: c
+  - delay: 234
+    content: l
+  - delay: 133
+    content: e
+  - delay: 83
+    content: a
+  - delay: 150
+    content: r
+  - delay: 501
+    content: "\r\n\e[3J\e[H\e[2J"
+  - delay: 191
+    content: "user@host$ \e[0m"
+  - delay: 523
+    content: d
+  - delay: 167
+    content: e
+  - delay: 201
+    content: e
+  - delay: 683
+    content: p
+  - delay: 400
+    content: '-'
+  - delay: 199
+    content: c
+  - delay: 169
+    content: o
+  - delay: 215
+    content: 'n'
+  - delay: 150
+    content: f
+  - delay: 266
+    content: u
+  - delay: 102
+    content: s
+  - delay: 165
+    content: a
+  - delay: 250
+    content: b
+  - delay: 317
+    content: l
+  - delay: 217
+    content: e
+  - delay: 216
+    content: s
+  - delay: 2950
+    content: ' '
+  - delay: 1150
+    content: '-'
+  - delay: 316
+    content: c
+  - delay: 201
+    content: ' '
+  - delay: 516
+    content: '-'
+  - delay: 251
+    content: v
+  - delay: 201
+    content: ' '
+  - delay: 165
+    content: '-'
+  - delay: 650
+    content: w
+  - delay: 267
+    content: ' '
+  - delay: 200
+    content: '-'
+  - delay: 299
+    content: m
+  - delay: 234
+    content: ' '
+  - delay: 300
+    content: '1'
+  - delay: 201
+    content: '0'
+  - delay: 182
+    content: ' '
+  - delay: 683
+    content: '-'
+  - delay: 300
+    content: t
+  - delay: 234
+    content: ' '
+  - delay: 384
+    content: '8'
+  - delay: 266
+    content: '5'
+  - delay: 267
+    content: ' '
+  - delay: 600
+    content: '-'
+  - delay: 185
+    content: d
+  - delay: 182
+    content: ' '
+  - delay: 816
+    content: w
+  - delay: 233
+    content: h
+  - delay: 217
+    content: i
+  - delay: 233
+    content: t
+  - delay: 133
+    content: e
+  - delay: 417
+    content: h
+  - delay: 250
+    content: o
+  - delay: 183
+    content: u
+  - delay: 100
+    content: s
+  - delay: 184
+    content: e
+  - delay: 700
+    content: .
+  - delay: 415
+    content: g
+  - delay: 202
+    content: o
+  - delay: 216
+    content: v
+  - delay: 733
+    content: "\r\n"
+  - delay: 319
+    content: "\r\n __   ___  ___  __      __   __        ___       __        __        ___  __\r\n|  \\ |__  |__  |__) __ /  ` /  \\ |\\ | |__  |  | /__`  /\\  |__) |    |__  /__`\r\n|__/ |___ |___ |       \\__, \\__/ | \\| |    \\__/ .__/ /~~\\ |__) |___ |___ .__/\r\n\r\n    Visual Unicode attacks with Deep Learning\r\n    Version 1.1.0\r\n    Created by:\r\n      - José Ignacio Escribano Pablos (@jiep)\r\n      - Miguel Hernández Boza (@Miguel000)\r\n      - Alfonso Muñoz Muñoz (@mindcrypt)\r\n\r\nSimilar domains to whitehouse.gov\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[31mƨ\e[32me\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[32ms\e[31mе\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[32ms\e[31mɘ\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[31mƨ\e[31mၔ\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[32ms\e[31mၔ\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[32ms\e[32me\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[31mƨ\e[31mе\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[31mƨ\e[31mɘ\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[31mƨ\e[31mɵ\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\n\e[32mw\e[32mh\e[32mi\e[32mt\e[32me\e[32mh\e[31m6\e[31mn\e[32ms\e[31mɵ\e[32m.\e[32mg\e[32mo\e[32mv\e[0m\r\nChecking if domains are up\r\n"
+  - delay: 190
+    content: "The domain whiteh6nƨe.gov does not exist\r\n"
+  - delay: 5172
+    content: "The domain whiteh6nsе.gov does not exist\r\n"
+  - delay: 5130
+    content: "The domain whiteh6nsɘ.gov does not exist\r\n"
+  - delay: 5305
+    content: "The domain whiteh6nƨၔ.gov does not exist\r\n"
+  - delay: 5431
+    content: "The domain whiteh6nsၔ.gov does not exist\r\n"
+  - delay: 5293
+    content: "The domain whiteh6nse.gov does not exist\r\n"
+  - delay: 5177
+    content: "The domain whiteh6nƨе.gov does not exist\r\n"
+  - delay: 5213
+    content: "The domain whiteh6nƨɘ.gov does not exist\r\n"
+  - delay: 5359
+    content: "The domain whiteh6nƨɵ.gov does not exist\r\n"
+  - delay: 5303
+    content: "The domain whiteh6nsɵ.gov does not exist\r\n"
+  - delay: 5006
+    content: "Total similar domains to whitehouse.gov: 10\r\n"
+  - delay: 191
+    content: "user@host$ \e[0m"

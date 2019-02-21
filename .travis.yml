@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.6"
+deploy:
+  - provider: pypi
+    user: deep-confusables
+    password:
+      secure: KlmaK2Z59bNjGXA4wId6neU4GZ9t6RGxSfMSXjzpJXjHY5PbhRgWGoRaxnqiKEjdj2vEyNtJokOEZtY8eu0+/zmeHFLK/4MTMpufrMDXeyw5C0Ajb4Baurombrxk1ArfjChw7TrMlFXEC1MunwrQp6ID5bUHywXxNYlUNIh/KKm6hfzQPBcXOrRwfg8bADkdOOJTTb/7jsO7mYfhlKNOIef49FXGeZES1TL0RV61iTZJkwtPaiXSRMvvUZVY3XVPfiTpRZ+s6/x0eApu1e3EYebIaE9z8/tejdqr4ItJygu7NaQ0DDUBsSbiuYB4y4coIwpTQ6jaAv61jfPpYAOu/6kbx/WsLhkgDr4Tqe/WNQP+BvIuqV5UYaW5nuj8QGjqD07urFOOWVgkMs2C9AWxCyGes1MnOiyhmcsZS7EoA1ZYYKW7jnOqDqV58tpLXNbE0kkBaX2MU9GrEVWpNs0QJeFwoAwGw5vB/RtUZYerMeNIqk+7rBMUbMsCqT5dO41Ssy8f8btxAvxMjjgF4lvGA/H3lKQgbxanh3JKCCLz5untDl7+W0AO6NYRdyQQtELAoOq+KcAxwsxKq/vkr5dLGXuX5Zzfc6O+YyLos2ylWAgljwJhSU23/SU8dzcygz581Y1Zc6Y6hFTUpJwimYFaRZuoj7ZLOwhMOBFgWbGKj3U=
+    distributions: sdist bdist_wheel
+    on:
+      branch: master
+  - deploy:
+      provider: releases
+      api_key:
+        secure: ky/3i4MSg22AAOxGHey7s4SlNgd1n3RmKY5lbuepQeyIsRImNahJVqEc+pUKpe9h2o8X2ZI9rJoNh2E0KbBtvT7IJYpM8iK3v5T78f4BA8uXO1mxS7dIRda3uvhtVTOm5ruHpWg1/wkDtsqvbIfnHDw/KRRDhRmbwjuxcOyB8zeRplmrByAQwzaQf2Gw4lzNg/OV6CCQ8ux2GYloqHacMK+S0qkPBePEBLL7e7EEtcU5M5NFR02exQI6uXXwX28owzI9Cy2KKWGhi5X37hzjGzmqSJPLtN8x0CHl/LQliFG2H+XEyV+peu3KmG8k2nZsNl3Ib85abkObGA9sNoVKunzf8Yd9GT2QIU3hkuwzL5tNoBv5pMY4I7YSRl+DpZcOIIjlfZBx2zAwdhq9MibI7yGVUnu0d+q7NdSobGFPdqXrVktNLKsq4t1egA6TwXy4Jh+RbZVUIhxQNDR9L8gTrkS5pC50vaAZczuBBkEWQ+oqXjf84wjo0PSke+PV1HIorqpBaQkdK56bQg+TKBnMWNf4RzrkloykIt5JtFEr6UUp7XQXr1HDb1rANwo1n3vHwFPT8/n94J+KktUzXLLu250CXfHTSE9RCoK7yKbHSreMoLXQaoyEd05X5j05qFIshiuh9ETbv40/z0xSZe3iOa9gBxC2DEGl4MSyF/KOzmU=
+      file: dist/*
+      skip_cleanup: true
+      on:
+        branch: master
