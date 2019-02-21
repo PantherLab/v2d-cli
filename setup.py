@@ -11,7 +11,7 @@ with open(path.join(here, 'requirements.txt')) as f:
 
 setup(
     name="deep-confusables",
-    version="1.1.0",
+    version="1.1.1",
     packages=find_packages(),
     long_description=readme,
     long_description_content_type='text/markdown',

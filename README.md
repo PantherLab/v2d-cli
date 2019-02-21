@@ -35,7 +35,7 @@ $ deep-confusables -d example.org -m 10 -c -v
 |__/ |___ |___ |       \__, \__/ | \| |    \__/ .__/ /~~\ |__) |___ |___ .__/
 
     Visual Unicode attacks with Deep Learning
-    Version 1.1.0
+    Version 1.1.1
     Created by:
       - José Ignacio Escribano Pablos (@jiep)
       - Miguel Hernández Boza (@Miguel000)
@@ -79,7 +79,7 @@ $ deep-confusables -h
 |__/ |___ |___ |       \__, \__/ | \| |    \__/ .__/ /~~\ |__) |___ |___ .__/
 
     Visual Unicode attacks with Deep Learning
-    Version 1.1.0
+    Version 1.1.1
     Created by:
       - José Ignacio Escribano Pablos (@jiep)
       - Miguel Hernández Boza (@Miguel000)
