@@ -1,4 +1,5 @@
 from colorama import Fore, Style
+from sys import stdout
 
 
 def print_green(text):
@@ -9,7 +10,7 @@ def print_red(text):
     print('{}{}{}'.format(Fore.RED, text, Style.RESET_ALL))
 
 
-def print_diff(domain, unicode_domain):
+def print_diff(domain, unicode_domain, is_tty=stdout.isatty()):
     # if len(domain) != len(unicode_domain) return(-1)
 
     difference = ''
@@ -21,4 +22,4 @@ def print_diff(domain, unicode_domain):
 
     difference = difference + Style.RESET_ALL
 
-    print(difference)
+    print(difference if is_tty else domain)
